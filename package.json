@@ -1,5 +1,5 @@
 {
-  "name": "biggmind",
+  "name": "childf",
   "version": "1.0.0",
   "private": true,
   "scripts": {
@@ -19,8 +19,11 @@
   },
   "devDependencies": {
     "@nuxtjs/vuetify": "^1.11.2",
-    "fibers": "^5.0.0",
-    "sass": "^1.30.0",
+     "sass": "^1.30.0",
     "sass-loader": "^10.1.0"
-  }
+  },
+  "engines": {
+    "node": ">=14.15.3",
+    "npm": ">=6.0.0"
+  },
 }

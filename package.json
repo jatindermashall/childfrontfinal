@@ -1,16 +1,26 @@
 {
-  "dependencies": {
-    "cosmicjs": "^2.36.0",
-    "nuxt": "^0.9.6",
-    "yarn": "^0.19.1"
-  },
+  "name": "biggmind",
+  "version": "1.0.0",
+  "private": true,
   "scripts": {
-    "dev": "NODE_ENV=development nuxt",
+    "dev": "nuxt",
     "build": "nuxt build",
-    "start": "npm run build; NODE_ENV=production HOST=0.0.0.0 nuxt start",
-    "dev": "npm run build; nuxt start"
+    "start": "nuxt start",
+    "export": "nuxt export",
+    "serve": "nuxt serve"
   },
-  "engines": {
-    "node": "7.4.0"
+  "dependencies": {
+    "@nuxtjs/auth": "^4.9.1",
+    "@nuxtjs/axios": "^5.11.0",
+    "@nuxtjs/moment": "^1.6.1",
+    "@nuxtjs/vuetify": "^1.11.2",
+    "nuxt": "^2.14.12",
+    "vuetify": "^2.0.0"
+  },
+  "devDependencies": {
+    "@nuxtjs/vuetify": "^1.11.2",
+    "fibers": "^5.0.0",
+    "sass": "^1.30.0",
+    "sass-loader": "^10.1.0"
   }
 }

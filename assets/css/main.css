@@ -154,7 +154,7 @@ fieldset .no-pad {
 
 /*--------------------Default Page Header-----------------------*/
 .jumbotron {
-  background: url(~/assets/img/background.jpg);
+  background: url(../../assets/img/background.jpg);
   background-size: cover;
   background-position: center;
   padding: 13% 0;

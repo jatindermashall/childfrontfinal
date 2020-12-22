@@ -56,7 +56,7 @@ export default {
   },
   //Global JS
   script: [
-    {src: '~/assets/js/jquery.min.js',body: true},
+    {src: 'assets/js/jquery.min.js',body: true},
     {src: '~/assets/js/bootstrap.min.js',body: true},
     {src: '~/assets/js/owl.carousel.min.js',body: true},
     {src: '~/assets/js/bootsnav.js',body: true},
@@ -65,7 +65,7 @@ export default {
   /*
    ** Global CSS
    */
-  css: ["~/assets/css/plugins.css","~/assets/css/common.css","~/assets/css/main.css"],
+  css: ["~/assets/css/plugins.css","~/assets/css/common.css","~/assets/css/main.css","~/assets/css/fonts.css"],
   /*
    ** Plugins to load before mounting the App
    ** https://nuxtjs.org/guide/plugins

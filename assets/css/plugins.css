@@ -15655,17 +15655,6 @@ body.on-side .wrap-sticky nav.navbar.bootsnav.sticked {
 
 /*------------- Line Font Icon-----------------*/
 
-@font-face {
-  font-family: et-line;
-  src: url(../assets/fonts/et-line.eot);
-  src: url(../assets/fonts/et-line.eot?#iefix) format("embedded-opentype"),
-    url(../assets/fonts/et-line.woff) format("woff"),
-    url(../assets/fonts/et-line.ttf) format("truetype"),
-    url(../assets/fonts/et-line.svg#et-line) format("svg");
-  font-weight: 400;
-  font-style: normal;
-}
-
 [data-icon]:before {
   font-family: et-line;
   content: attr(data-icon);

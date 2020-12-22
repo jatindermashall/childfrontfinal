@@ -333,18 +333,6 @@ body {
   background-color: #fff;
 }
 
-@font-face {
-  font-family: "Glyphicons Halflings";
-  src: url(../../assets/fonts/glyphicons-halflings-regular.eot);
-  src: url(../../assets/fonts/glyphicons-halflings-regular.eot?#iefix)
-      format("embedded-opentype"),
-    url(../../assets/fonts/glyphicons-halflings-regular.woff2) format("woff2"),
-    url(../../assets/fonts/glyphicons-halflings-regular.woff) format("woff"),
-    url(../../assets/fonts/glyphicons-halflings-regular.ttf) format("truetype"),
-    url(../../assets/fonts/glyphicons-halflings-regular.svg#glyphicons_halflingsregular)
-      format("svg");
-}
-
 .glyphicon {
   position: relative;
   top: 1px;
@@ -8044,7 +8032,6 @@ button.close {
 }
 
 .grabbing {
-  cursor: url(grabbing.png) 8 8, move;
 }
 
 .owl-carousel .owl-item,
@@ -8418,7 +8405,6 @@ button.close {
 
 .owl-item.loading {
   min-height: 150px;
-  background: url(AjaxLoader.gif) center center no-repeat;
 }
 
 /*------------- Animate Css-----------------*/

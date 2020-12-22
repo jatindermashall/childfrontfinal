@@ -56,8 +56,11 @@ export default {
   },
   //Global JS
   script: [
-    {src: 'js/main.js'},
-    {src: 'js/jquery.js'}
+    {src: '~/assets/js/jquery.min.js',body: true},
+    {src: '~/assets/js/bootstrap.min.js',body: true},
+    {src: '~/assets/js/owl.carousel.min.js',body: true},
+    {src: '~/assets/js/bootsnav.js',body: true},
+    {src: '~/assets/js/main.js',body: true}
   ],
   /*
    ** Global CSS
@@ -67,7 +70,7 @@ export default {
    ** Plugins to load before mounting the App
    ** https://nuxtjs.org/guide/plugins
    */
-  plugins: ['~/plugins/jquery.min.js','~/plugins/bootstrap.min.js','~/plugins/owl.carousel.min.js','~/plugins/bootsnav.js','~/plugins/main.js'],
+  plugins: [],
   /*
    ** Auto import components
    ** See https://nuxtjs.org/api/configuration-components

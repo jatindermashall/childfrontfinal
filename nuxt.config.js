@@ -62,12 +62,12 @@ export default {
   /*
    ** Global CSS
    */
-  css: ["~/assets/css/styles.css","~/assets/css/home.css"],
+  css: ["~/assets/css/plugins.css","~/assets/css/common.css","~/assets/css/main.css"],
   /*
    ** Plugins to load before mounting the App
    ** https://nuxtjs.org/guide/plugins
    */
-  plugins: [],
+  plugins: ['~/plugins/jquery.min.js','~/plugins/bootstrap.min.js','~/plugins/owl.carousel.min.js','~/plugins/bootsnav.js','~/plugins/main.js'],
   /*
    ** Auto import components
    ** See https://nuxtjs.org/api/configuration-components

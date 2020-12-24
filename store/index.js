@@ -1,6 +1,6 @@
 import Vuex from "vuex";
 import Vue from "vue";
-import names from "./names.js"
+import names from "names"
 
 
 

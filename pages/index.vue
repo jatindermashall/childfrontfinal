@@ -1,89 +1,13 @@
 <template>
   <div>
     <!-- Navigation Start  -->
-    <nav class="navbar navbar-default navbar-sticky bootsnav">
-      <div class="container">
-        <!-- Start Header Navigation -->
-        <div class="navbar-header">
-          <button
-            type="button"
-            class="navbar-toggle"
-            data-toggle="collapse"
-            data-target="#navbar-menu"
-          >
-            <i class="fa fa-bars"></i>
-          </button>
-          <a class="navbar-brand" href="index.html">Child Name Generator</a>
-        </div>
-        <!-- End Header Navigation -->
-
-        <!-- Collect the nav links, forms, and other content for toggling -->
-        <div class="collapse navbar-collapse" id="navbar-menu">
-          <ul
-            class="nav navbar-nav navbar-right"
-            data-in="fadeInDown"
-            data-out="fadeOutUp"
-          >
-            <li><a href="index.html">Home</a></li>
-            <li><a href="login.html">Login</a></li>
-            <li><a href="companies.html">Categories</a></li>
-          </ul>
-        </div>
-        <!-- /.navbar-collapse -->
-      </div>
-    </nav>
+     <Header/>
     <!-- Navigation End  -->
 
-    <!-- Main jumbotron for a primary marketing message or call to action -->
-    <section
-      class="main-banner"
-      style="background:#242c36 url(img/slider-01.jpg) no-repeat"
-    >
-      <div class="container">
-        <div class="caption">
-          <h2>Search Name</h2>
-          <form>
-            <fieldset>
-              <div class="col-md-4 col-sm-4 no-pad">
-                <input
-                  type="text"
-                  class="form-control border-right"
-                  placeholder="Category, character"
-                />
-              </div>
-              <div class="col-md-3 col-sm-3 no-pad">
-                <select class="selectpicker border-right">
-                  <option>Age</option>
-                  <option>0 Year</option>
-                  <option>1 Year</option>
-                  <option>2 Year</option>
-                  <option>3 Year</option>
-                  <option>4 Year</option>
-                  <option>5 Year</option>
-                  <option>6 Year</option>
-                  <option>7 Year</option>
-                  <option>8 Year</option>
-                  <option>9 Year</option>
-                  <option>10 Year</option>
-                </select>
-              </div>
-              <div class="col-md-3 col-sm-3 no-pad">
-                <select class="selectpicker">
-                  <option>Select Category</option>
-                  <option>Funny</option>
-                  <option>Technology</option>
-                  <option>Historical</option>
-                  <option>Successful</option>
-                </select>
-              </div>
-              <div class="col-md-2 col-sm-2 no-pad">
-                <input type="submit" class="btn seub-btn" value="submit" />
-              </div>
-            </fieldset>
-          </form>
-        </div>
-      </div>
-    </section>
+    <!-- Search section -->
+    
+     <Search/>
+    <!--Search Section -->
 
     <section class="features">
       <div class="container">
@@ -183,7 +107,7 @@
               ><span aria-hidden="true" class="icon-expand"></span
             ></span>
             <h3>207</h3>
-            <p>All Companies</p>
+            <p>All Categories</p>
           </div>
         </div>
 
@@ -342,7 +266,7 @@
           </div>
         </div>
         <div class="row">
-          <input type="button" class="btn brows-btn" value="Brows All Jobs" />
+          <input type="button" class="btn brows-btn" value="Brows All Names" />
         </div>
       </div>
     </section>
@@ -499,77 +423,21 @@
     </section>
 
     <!-- footer start -->
-    <footer>
-      <div class="container">
-        <div class="col-md-3 col-sm-6">
-          <h4>Featured Name</h4>
-          <ul>
-            <li><a href="#">Browse Names</a></li>
-            <li><a href="#">Premium Names</a></li>
-            <li><a href="#">Access Database</a></li>
-            <li><a href="#">Manage Responses</a></li>
-            <li><a href="#">Report a Problem</a></li>
-            <li><a href="#">Mobile Site</a></li>
-            <li><a href="#">Name by Skill</a></li>
-          </ul>
-        </div>
-
-        <div class="col-md-3 col-sm-6">
-          <h4>Latest Job</h4>
-          <ul>
-            <li><a href="#">Browse Name</a></li>
-            <li><a href="#">Premium MBA Name</a></li>
-            <li><a href="#">Access Database</a></li>
-            <li><a href="#">Manage Responses</a></li>
-            <li><a href="#">Report a Problem</a></li>
-            <li><a href="#">Mobile Site</a></li>
-            <li><a href="#">Name by Skill</a></li>
-          </ul>
-        </div>
-
-        <div class="col-md-3 col-sm-6">
-          <h4>Reach Us</h4>
-          <address>
-            <ul>
-              <li>
-                1201, Murakeu Market, QUCH07<br />
-                United Kingdon
-              </li>
-              <li>Email: Support@dfdsfdsf.com</li>
-              <li>Call: 044 123 458 234234</li>
-              <li>Skype: joasdasb@skype</li>
-              <li>FAX: 12333 456 85</li>
-            </ul>
-          </address>
-        </div>
-
-        <div class="col-md-3 col-sm-6">
-          <h4>Drop A Mail</h4>
-          <form>
-            <input
-              type="text"
-              class="form-control input-lg"
-              placeholder="Your Name"
-            />
-            <input
-              type="text"
-              class="form-control input-lg"
-              placeholder="Email..."
-            />
-            <textarea class="form-control" placeholder="Message"></textarea>
-            <button type="submit" class="btn btn-primary">Login</button>
-          </form>
-        </div>
-      </div>
-      <div class="copy-right">
-        <p>&copy;Copyright 2018 Child Name</p>
-      </div>
-    </footer>
+    <Footer />
   </div>
 </template>
 
 <script>
-export default {};
+import Header from "~/components/parts/Header.vue";
+import Search from "~/components/parts/Search.vue";
+import Footer from "~/components/parts/Footer.vue";
+export default {
+  components: {
+    Header,
+     Search, 
+     Footer
+  }
+};
 </script>
 
 <style></style>

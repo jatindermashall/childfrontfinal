@@ -13,7 +13,7 @@
                   type="text"
                   class="form-control border-right"
                   placeholder="Category, character"
-                name="search" id="search"/>
+                name="search" id="search" v-model="search"/>
               </div>
               <div class="col-md-3 col-sm-3 no-pad">
                 <select class="selectpicker border-right" name=age>
@@ -54,15 +54,23 @@
 </template>
 
 <script>
+import { mapGetters, mapActions, mapState } from "vuex";
 export default {
   data(){
+    return { 
+     
+      search: null
+      };
 
   },
   name:"Search",
   methods: {
-
+      ...mapActions("names", ["fetchNames", "setSearch"]),
     async searchFilter() {
-      if (this.search != "") this.$router.push({ name: "profileFilter" });
+      if (this.search) {
+        await this.setSearch({ text: this.search, type: "names" });
+      if (this.search != "") this.$router.push({ name: "nameFilter" });
+      }
 
     }
   }

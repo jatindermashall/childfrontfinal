@@ -7,9 +7,11 @@
     <!-- Search section -->
     
      
-    <!--Search Section -->
+    <!--Names List Section -->
 
-    <Searchinner/>
+    <Nameslist/>
+
+   
 
     
 
@@ -27,12 +29,12 @@
 
 <script>
 import Header from "~/components/parts/Header.vue";
-import Searchinner from "~/components/parts/Searchinner.vue";
+import Nameslist from "~/components/Nameslist.vue";
 import Footer from "~/components/parts/Footer.vue";
 export default {
   components: {
-    Header,
-     Searchinner, 
+     Header,
+     Nameslist, 
      Footer
   }
 };

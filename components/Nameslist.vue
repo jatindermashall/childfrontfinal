@@ -4,7 +4,7 @@
 
     <ul v-for="(name, index) in nameArr"
               :key="index">
-      <li>{name}</li>
+      <li>{name.name}</li>
 
     </ul>
   </div>
@@ -20,13 +20,17 @@ export default {
   },
   name: "NamesList",
   methods:{
-    ...mapActions("names",["fetchNames"])
+    ...mapActions("names",["fetchNames","setSearch"])
   },
   computed: {
-    ...mapState( [ "filterName"]),
-    ...mapGetters("names", ["allNames","filtername"]),
-    nameArr() {
     
+    
+    ...mapState(["filterName"]),
+    async nameArr() {
+
+      //console.log(this.$route.query.search);
+       await this.setSearch({ text: this.$route.query.search, type: "names" });
+     console.log(this.filterName);
       if (this.$nuxt.$route.name === "nameFilter") return this.filterName;
 
       }

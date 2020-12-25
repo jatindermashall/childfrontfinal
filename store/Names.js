@@ -52,7 +52,7 @@ const actions = {
 const mutations = {
   setNames: (state, names) => (state.names = names),
   setNamesFilter: (state, names) => (state.filterName = names), 
-  setSearch: (state, payload) => (state.filtersearch = payload)
+  setSearch: (state, payload) => (state.filterName = payload)
 };
 
 export default {

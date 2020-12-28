@@ -33,7 +33,7 @@ const actions = {
     commit("setSelectedName", response.data);
   },
   async setSearch({ state, commit, dispatch }, payload) {
-   //console.log(process.env.apiUrl);
+   console.log(process.env.apiUrl);
 
     if (payload.type.toLowerCase() === "names") {
       let result = await axios.get(
@@ -42,8 +42,7 @@ const actions = {
       );
       //console.log(result.data);
       commit("setNamesFilter", result.data);
-
-      //console.log(result.data);
+     console.log(result.data);
     }
     commit("setSearch", payload);
   }

@@ -2,7 +2,8 @@ import axios from "axios";
 
 export const state = () => ({
   names: [],
-  filterName: []
+  filterName: [],
+  loading: false
 })
 
 export const getters = {
@@ -33,12 +34,18 @@ export const actions = {
   async setSearch({ state, commit, dispatch }, payload) {
    //console.log(process.env.apiUrl);
     if (payload.type.toLowerCase() === "names") {
-      let result = await axios.get(
-        process.env.apiUrl +
-          `/childnames?name_contains=${payload.text}`
-      );
-
-      commit("setSearch", result.data);
+      commit("setLoading", true);
+      try {
+        let result = await axios.get(
+          process.env.apiUrl +
+            `/childnames?name_contains=${payload.text}`
+        );
+  
+        commit("setSearch", result.data);
+      } catch (error) {
+        console.log(error, 'error')
+      }
+      commit("setLoading", false);
      //console.log(state.filterName);
       //commit("setNamesFilter", result.data);
      //console.log(result.data);
@@ -51,6 +58,9 @@ export const mutations = {
   setNames: (state, names) => (state.names = names),
   setSearch(state, payload) {
     state.filterName = payload
+  },
+  setLoading(state, payload) {
+    state.loading = payload
   }
 };
 

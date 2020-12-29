@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div v-if="filterName && filterName.length">
+    <div v-if="filterName && filterName.length && !loading">
       <v-list flat class="w-50 mx-auto">
         <v-subheader>Names</v-subheader>
         <v-list-item-group
@@ -16,10 +16,12 @@
         </v-list-item-group>
       </v-list>
     </div>
-    <div v-else>
+    <div v-else-if="loading">
+      Loading...
+    </div>
+    <div v-else-if="!filterName.length">
       No Name found
     </div>
-    <div style="display: none;">{{nameArr}}</div>
   </div>
 </template>
 
@@ -32,20 +34,15 @@ export default {
     };
   },
   name: "NamesList",
+  async mounted() {
+    await this.setSearch({ text: this.$route.query.search, type: "names" });
+  },
   methods:{
     ...mapActions('Names',["setSearch"]),
     // ...mapGetters('Names',["filtername"])
   },
   computed: {
-    ...mapState('Names', ['filterName']),
-    async nameArr() {
-      let nameArr = []
-      //console.log(this.$route.query.search);
-       await this.setSearch({ text: this.$route.query.search, type: "names" });
-     //console.log(this.$store.state.filterName);
-      if (this.$nuxt.$route.name === "nameFilter") nameArr = this.filterName;
-      return nameArr;
-    }
+    ...mapState('Names', ['filterName', 'loading'])
   }
 }
 

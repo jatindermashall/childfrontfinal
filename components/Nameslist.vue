@@ -1,12 +1,25 @@
 <template>
   <div>
-
-
-    <ul v-for="(name, index) in nameArr"
-              :key="index">
-      <li>{name.id}</li>
-
-    </ul>
+    <div v-if="filterName && filterName.length">
+      <v-list flat class="w-50 mx-auto">
+        <v-subheader>Names</v-subheader>
+        <v-list-item-group
+          v-model="selectedItem"
+          color="primary"
+        >
+          <v-list-item
+            v-for="(name, i) in filterName" :key="i">
+            <v-list-item-content>
+              <v-list-item-title v-text="name.name"></v-list-item-title>
+            </v-list-item-content>
+          </v-list-item>
+        </v-list-item-group>
+      </v-list>
+    </div>
+    <div v-else>
+      No Name found
+    </div>
+    <div style="display: none;">{{nameArr}}</div>
   </div>
 </template>
 
@@ -20,25 +33,20 @@ export default {
   },
   name: "NamesList",
   methods:{
-    ...mapActions('names',["setSearch"]),
-     ...mapGetters('names',["filtername"])
+    ...mapActions('Names',["setSearch"]),
+    // ...mapGetters('Names',["filtername"])
   },
   computed: {
-    
-    
-   
+    ...mapState('Names', ['filterName']),
     async nameArr() {
-
+      let nameArr = []
       //console.log(this.$route.query.search);
        await this.setSearch({ text: this.$route.query.search, type: "names" });
      //console.log(this.$store.state.filterName);
-      if (this.$nuxt.$route.name === "nameFilter") return this.filtername;
-
-      }
+      if (this.$nuxt.$route.name === "nameFilter") nameArr = this.filterName;
+      return nameArr;
+    }
   }
-
-
-
 }
 
 </script>

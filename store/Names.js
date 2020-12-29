@@ -1,16 +1,16 @@
 import axios from "axios";
 
-const state = {
+export const state = () => ({
   names: [],
   filterName: []
-};
+})
 
-const getters = {
+export const getters = {
   allName: state => state.names,
   filtername: state => state.filterName
 };
 
-const actions = {
+export const actions = {
   async fetchNames({ commit }) {
     //alert(process.env.apiUrl);
     const response = await axios.get(process.env.apiUrl + "/childnames");
@@ -32,12 +32,12 @@ const actions = {
   },
   async setSearch({ state, commit, dispatch }, payload) {
    //console.log(process.env.apiUrl);
-
     if (payload.type.toLowerCase() === "names") {
       let result = await axios.get(
         process.env.apiUrl +
           `/childnames?name_contains=${payload.text}`
       );
+
       commit("setSearch", result.data);
      //console.log(state.filterName);
       //commit("setNamesFilter", result.data);
@@ -47,9 +47,11 @@ const actions = {
   }
 };
 
-const mutations = {
+export const mutations = {
   setNames: (state, names) => (state.names = names),
-  setSearch: (state, payload) => (state.filterName = payload)
+  setSearch(state, payload) {
+    state.filterName = payload
+  }
 };
 
 export default {

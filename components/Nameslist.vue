@@ -31,7 +31,7 @@ export default {
 
       //console.log(this.$route.query.search);
        await this.setSearch({ text: this.$route.query.search, type: "names" });
-     console.log(this.filtername);
+     //console.log(this.$store.state.filterName);
       if (this.$nuxt.$route.name === "nameFilter") return this.filtername;
 
       }

@@ -2,8 +2,6 @@ import axios from "axios";
 
 const state = {
   names: [],
-  selectedName: {},
-  filtersearch: {},
   filterName: []
 };
 
@@ -40,17 +38,17 @@ const actions = {
         process.env.apiUrl +
           `/childnames?name_contains=${payload.text}`
       );
+      commit("setSearch", result.data);
       //console.log(result.data);
-      commit("setNamesFilter", result.data);
-     console.log(result.data);
+      //commit("setNamesFilter", result.data);
+     //console.log(result.data);
     }
-    commit("setSearch", payload);
+    
   }
 };
 
 const mutations = {
   setNames: (state, names) => (state.names = names),
-  setNamesFilter: (state, names) => (state.filterName = names), 
   setSearch: (state, payload) => (state.filterName = payload)
 };
 

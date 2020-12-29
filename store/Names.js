@@ -39,7 +39,7 @@ const actions = {
           `/childnames?name_contains=${payload.text}`
       );
       commit("setSearch", result.data);
-      //console.log(result.data);
+     //console.log(result.data);
       //commit("setNamesFilter", result.data);
      //console.log(result.data);
     }
